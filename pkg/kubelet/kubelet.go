@@ -695,10 +695,10 @@ func (kl *Kubelet) runContainer(pod *api.BoundPod, container *api.Container, pod
 		PortBindings: portBindings,
 		Binds:        binds,
 		NetworkMode:  netMode,
-		IpcMode:      ipcMode,
-		Privileged:   privileged,
-		CapAdd:       capAdd,
-		CapDrop:      capDrop,
+		//IpcMode:      ipcMode,
+		Privileged: privileged,
+		CapAdd:     capAdd,
+		CapDrop:    capDrop,
 	}
 	if pod.Spec.DNSPolicy == api.DNSClusterFirst {
 		if err := kl.applyClusterDNS(hc, pod); err != nil {
